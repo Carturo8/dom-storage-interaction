@@ -37,3 +37,21 @@ userForm.addEventListener('submit', function (event) {
         showConfirmButton: false,
     });
 });
+
+// Function to load and display user data from localStorage
+function displayStoredUserData() {
+    const storedData = localStorage.getItem('userData');
+
+    const outputElement = document.getElementById('output');
+
+    if (!storedData) {
+        outputElement.textContent = 'No user data found.';
+        return;
+    }
+
+    const userData = JSON.parse(storedData);
+    outputElement.textContent = `Name: ${userData.name}, Age: ${userData.age}`;
+}
+
+// Call display function on a page load
+window.addEventListener('DOMContentLoaded', displayStoredUserData);
