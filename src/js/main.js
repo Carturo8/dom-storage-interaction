@@ -2,7 +2,7 @@
 const userForm = document.getElementById('userForm');
 
 // Event listener for form submission
-userForm.addEventListener('submit', function (event) {
+userForm.addEventListener('submit', (event) => {
     event.preventDefault(); // Prevent default form submission
 
     // Get input values
@@ -27,6 +27,9 @@ userForm.addEventListener('submit', function (event) {
 
     // Store data in localStorage
     localStorage.setItem('userData', JSON.stringify(userData));
+
+    // show updated info without reloading
+    displayStoredUserData();
 
     // Show a confirmation alert
     Swal.fire({
