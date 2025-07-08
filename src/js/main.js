@@ -36,7 +36,11 @@ userForm.addEventListener('submit', function (event) {
         timer: 2000,
         showConfirmButton: false,
     });
+
+    // Update interaction counter in sessionStorage
+    updateInteractionCounter();
 });
+
 
 // Function to load and display user data from localStorage
 function displayStoredUserData() {
@@ -55,3 +59,26 @@ function displayStoredUserData() {
 
 // Call display function on a page load
 window.addEventListener('DOMContentLoaded', displayStoredUserData);
+
+
+// Function to update and display session interaction count
+function updateInteractionCounter() {
+    // Retrieve the current count from sessionStorage (if it exists)
+    let count = sessionStorage.getItem('interactionCount');
+
+    // If count exists, increment it; otherwise, start from 1
+    count = count ? Number(count) + 1 : 1;
+
+    // Store updated count back in sessionStorage
+    sessionStorage.setItem('interactionCount', count);
+
+    // Update counter display on the page
+    const counterElement = document.getElementById('interactionCounter');
+    counterElement.textContent = `Interactions this session: ${count}`;
+}
+
+// Call this function on a page load to initialize the display
+window.addEventListener('DOMContentLoaded', function () {
+    updateInteractionCounter();
+});
+
