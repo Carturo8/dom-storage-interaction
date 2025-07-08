@@ -1,0 +1,13 @@
+# Ignore WebStorm project files
+.idea/
+*.iml
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and temp files
+*.log
+*.tmp
+*.bak
+*.swp
