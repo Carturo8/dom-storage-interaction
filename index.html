@@ -2,17 +2,34 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Storage Interaction</title>
-    <!-- Link to external CSS -->
-    <link rel="stylesheet" href="./src/css/styles.css" />
+    <link rel="stylesheet" href="./src/css/styles.css">
 </head>
 
 <body>
-    <!-- Placeholder for future form and output elements -->
+    <main>
+        <section>
+            <form id="userForm">
+                <label for="nameInput">Name:</label>
+                <input type="text" id="nameInput" name="name" required>
 
-    <!-- Link to external JavaScript -->
+                <label for="ageInput">Age:</label>
+                <input type="number" id="ageInput" name="age" required min="0">
+
+                <button type="submit">Save Data</button>
+            </form>
+
+            <button id="clearDataBtn">Clear Stored Data</button>
+        </section>
+
+        <section>
+            <div id="output"></div>
+            <div id="interactionCounter"></div>
+        </section>
+    </main>
+
     <script src="./src/js/main.js"></script>
 </body>
 
