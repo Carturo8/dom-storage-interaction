@@ -82,3 +82,28 @@ window.addEventListener('DOMContentLoaded', function () {
     updateInteractionCounter();
 });
 
+
+// Reference to the clear data button
+const clearDataBtn = document.getElementById('clearDataBtn');
+
+// Event listener to clear localStorage and update UI
+clearDataBtn.addEventListener('click', () => {
+    // Remove stored user data
+    localStorage.removeItem('userData');
+
+    // Clear displayed output
+    const outputElement = document.getElementById('output');
+    outputElement.textContent = 'User data has been cleared.';
+
+    // Show a confirmation alert
+    Swal.fire({
+        icon: 'info',
+        title: 'Data Cleared',
+        text: 'Stored data has been removed.',
+        timer: 2000,
+        showConfirmButton: false,
+    });
+
+    // Count this as an interaction
+    updateInteractionCounter();
+});
