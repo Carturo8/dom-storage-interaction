@@ -42,13 +42,15 @@ userForm.addEventListener('submit', (event) => {
 
     // Update interaction counter in sessionStorage
     updateInteractionCounter();
+
+    // Clear input fields
+    userForm.reset();
 });
 
 
 // Function to load and display user data from localStorage
 function displayStoredUserData() {
     const storedData = localStorage.getItem('userData');
-
     const outputElement = document.getElementById('output');
 
     if (!storedData) {
